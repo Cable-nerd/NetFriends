@@ -1,0 +1,37 @@
+.ProfileSide {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    overflow: auto;
+    z-index: 1;
+    
+}
+
+
+
+@media (max-width: 768px) {
+
+    .ProfileSide {
+        display: flex;
+    }
+    
+
+}
+
+
+
+
+
+
+
+
+
+/*
+display:flex
+flex-direction: column;
+gap: 1rem;
+align-items: center;
+overflow: auto;
+z-index: 1
+*/

@@ -1,0 +1,15 @@
+.r-btn {
+  height: 3rem;
+  width: 80%;
+  align-self: center;
+}
+.modal-share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  
+  width: 100%;
+  height: 100%;
+}

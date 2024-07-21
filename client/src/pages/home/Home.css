@@ -1,0 +1,79 @@
+.Home {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem auto 20rem;
+    gap: 1rem;
+}
+.toggle-button {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .Home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .toggle-button {
+        display: block;
+        position: fixed;
+        top: 10px;
+        padding: 5px 10px; 
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        z-index: 1001;
+        cursor: pointer;
+        font-size: 0.8rem; 
+    }
+    .toggle-button.left {
+        left: 10px;
+    }
+
+    .toggle-button.right {
+        right: 10px;
+    }
+
+    .toggle-button:active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        background: var(--buttonBg);
+    }
+    .toggle-button + .toggle-button {
+        left: auto;
+        right: 10px;
+    }
+    .side-panel {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for full page cover */
+        z-index: 1000;
+        overflow-y: auto;
+        display: none; /* Hidden by default */
+    }
+
+    .side-panel.show {
+        display: block; /* Show the panel */
+    }
+
+    .side-panel-content {
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+}

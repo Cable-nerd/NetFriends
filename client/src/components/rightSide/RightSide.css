@@ -1,0 +1,41 @@
+.RightSide {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.navIcon {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navIcon > img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.navIcon >a> img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.navIcon >a>  img:active {
+    transform: translateY(1px); /* Adjust the amount of translation as needed */
+    transition: transform 0.1s ease; /* Adjust the transition properties as needed */
+}
+.r-btn {
+    height: 3rem;
+    width: 80%;
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    .RightSide {
+        display: flex;
+        height: 100%; 
+        width: 80%;
+    }
+}
+
+
