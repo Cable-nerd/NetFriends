@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Post.css";
 import Comment from "../../assets/img/comment.png";
 import Share from "../../assets/img/share.png";
-import NotLike from "../../assets/img/notLike.png";
+import NotLike from "../../assets/img/notlike.png";
 import Heart from "../../assets/img/like.png";
 import { useSelector } from "react-redux";
 import { likePost } from "../../api/PostRequest";
