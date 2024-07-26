@@ -1,5 +1,5 @@
 import UserModel from "../models/UserModel.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
 
@@ -71,5 +71,19 @@ export const LoginUser = async (req, res) => {
 };
 
 
+export const refreshTokens = (req, res) => {
+  const { refreshToken } = req.body;
+  if (!refreshToken) {
+    return res.status(401).json({ message: "Authentication failed: No refresh token provided" });
+  }
 
+  jwt.verify(refreshToken, process.env.JWT_REFRESH_KEY, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ message: "Forbidden: Invalid refresh token" });
+    }
+
+    const accessToken = generateAccessToken(decoded.id);
+    res.json({ accessToken });
+  });
+};
 
