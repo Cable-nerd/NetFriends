@@ -18,8 +18,10 @@ app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 // Serve images for public
-app.use(express.static('public')); 
-app.use('/images', express.static('images'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 dotenv.config();
 const PORT = process.env.PORT;
