@@ -9,6 +9,7 @@ import cors from "cors";
 import UploadRoute from "./routes/UploadRoute.js";
 import ChatRoute from "./routes/ChatRoute.js" 
 import MessageRoute from "./routes/MessageRoute.js"
+import path from "path";
 
 const app = express();
 
