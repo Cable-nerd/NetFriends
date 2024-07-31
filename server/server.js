@@ -30,7 +30,7 @@ const __dirname = path.dirname(__filename);
 // Serve the main application at the root URL
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 dotenv.config();
