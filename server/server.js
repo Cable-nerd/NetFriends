@@ -9,8 +9,7 @@ import cors from "cors";
 import UploadRoute from "./routes/UploadRoute.js";
 import ChatRoute from "./routes/ChatRoute.js" 
 import MessageRoute from "./routes/MessageRoute.js"
-import path from "path";
-import { fileURLToPath } from "url";
+
 
 const app = express();
 
@@ -23,15 +22,9 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(express.static('public')); 
 app.use('/images', express.static('images'));
 
-// Resolve __dirname in ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
-// Serve the main application at the root URL
-app.use(express.static(path.join(__dirname, '../client')));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client', 'index.html'));
-});
+
+
 
 dotenv.config();
 const PORT = process.env.PORT;
